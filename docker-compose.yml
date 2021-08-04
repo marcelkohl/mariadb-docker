@@ -1,0 +1,22 @@
+version: "3.8"
+services:
+    db:
+        volumes:
+            - ./sql:/docker-entrypoint-initdb.d
+        image: mariadb:latest
+        container_name: mariadb-docker
+        ports:
+            - ${EXPOSED_DB_PORT}:3306
+        environment:
+            MARIADB_ROOT_PASSWORD: ${DB_PASSWORD}
+            MARIADB_DATABASE: ${DB_DATABASE}
+            MARIADB_USER: ${DB_USERNAME}
+            MARIADB_PASSWORD: ${DB_PASSWORD}
+        env_file:
+            - ./.env
+        networks:
+          - mariadb-network
+
+networks:
+    mariadb-network:
+        driver: bridge
