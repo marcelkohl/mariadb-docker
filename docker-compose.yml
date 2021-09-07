@@ -20,3 +20,11 @@ services:
 networks:
     mariadb-network:
         driver: bridge
+
+# when network is over a VPN environment
+# networks:
+#   default:
+#     driver: bridge
+#     ipam:
+#       config:
+#         - subnet: 10.10.1.0/24
