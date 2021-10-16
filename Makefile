@@ -14,6 +14,3 @@ restart:
 
 build:
 	COMPOSE_DOCKER_CLI_BUILD=1 DOCKER_BUILDKIT=1 ${DC} build
-
-bash:
-	${DK} ${EXEC} bash
