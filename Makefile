@@ -1,6 +1,5 @@
 DK = docker
 DC = docker-compose
-EXEC = exec -it scooter-api-files
 
 init: build start
 
